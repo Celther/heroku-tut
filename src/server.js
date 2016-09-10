@@ -1,7 +1,17 @@
+const path = require('path');
 import express from 'express';
 
-let app = express();
+module.exports = {
+  app() {
+    const app = express()
+    const indexPath = path.join(__dirname, '/../index.html')
+    const buildPath = express.static(path.join(__dirname, '../build'))
 
-app.use(express.static(__dirname + '/'));
+    app.use('/build', buildPath)
+    app.get('/', function(_, res) { res.sendFile(indexPath) })
 
-app.listen(process.env.PORT || 8080);
+    return app
+  }
+}
+
+//app.listen(process.env.PORT || 8080);
