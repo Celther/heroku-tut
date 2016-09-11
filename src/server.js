@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 
 module.exports = {
-  app() {
+  app: function () {
     const app = express()
     const indexPath = path.join(__dirname, '/../index.html')
     const buildPath = express.static(path.join(__dirname, '../build'))
@@ -13,5 +13,3 @@ module.exports = {
     return app
   }
 }
-
-//app.listen(process.env.PORT || 8080);

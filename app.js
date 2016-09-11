@@ -1,4 +1,4 @@
-import Server from './server';
+const Server = require('./server.js')
 const port = (process.env.PORT || 8080);
 const app = Server.app();
 
@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(webpackHotMiddleware(compiler))
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.buildPath
+    publicPath: config.output.publicPath
   }))
 }
 
