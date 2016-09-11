@@ -4,7 +4,7 @@
   "description": "Barebones project for gettin a react app onto Heroku",
   "main": "index.js",
   "scripts": {
-    "start": "node /app.js",
+    "start": "node ./app.js",
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "keywords": [
